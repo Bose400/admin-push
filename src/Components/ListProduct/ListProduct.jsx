@@ -9,7 +9,7 @@ const ListProduct = () => {
 
     // Function to fetch product information from the server
     const fetchProductInfo = async () => {
-        await fetch('http://localhost:5050/allproducts').then((resp)=>resp.json()).then((data)=>{setAllProducts(data)});
+        await fetch('https://backend-push-production.up.railway.app/allproducts').then((resp)=>resp.json()).then((data)=>{setAllProducts(data)});
     }
 
     // Fetch product info on component mount
@@ -19,7 +19,7 @@ const ListProduct = () => {
 
     // Function to delete a product
     const deleteProduct = async (id) =>{
-        await fetch("http://localhost:5050/deleteproduct",{
+        await fetch("https://backend-push-production.up.railway.app/deleteproduct",{
             method:'POST',
             headers:{
                 Accept:'application/json',

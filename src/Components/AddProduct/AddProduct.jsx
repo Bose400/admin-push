@@ -35,7 +35,7 @@ const AddProduct = () => {
         formData.append('product',image);
 
         // Upload image to server
-        await fetch('http://localhost:5050/upload',{
+        await fetch('https://backend-push-production.up.railway.app/upload',{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -48,7 +48,7 @@ const AddProduct = () => {
             product.image = resData.image_url; // Update product image URL
             console.log(product); // Log updated product details
             // Add product to database
-            await fetch('http://localhost:5050/addproduct',{
+            await fetch('https://backend-push-production.up.railway.app/addproduct',{
                 method:'POST',
                 headers:{
                     Accept:'application/json',
